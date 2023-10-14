@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/index', [\App\Http\Controllers\EmployeeInfoController::class, 'index'])->name('index');
+
+Route::post('/addEmployeeInfo', [\App\Http\Controllers\EmployeeInfoController::class, 'addEmployeeInfo'])->name('addEmployeeInfo');
+
+Route::delete('/deleteEmployeeInfo/{id}', [\App\Http\Controllers\EmployeeInfoController::class, 'deleteEmployeeInfo'])->name('deleteEmployeeInfo');
+
+Route::put('/updateEmployeeInfo/{id}', [\App\Http\Controllers\EmployeeInfoController::class, 'updateEmployeeInfo'])->name('updateEmployeeInfo');
